@@ -43,9 +43,6 @@ yarn-error.log*
 *.mdf
 *.ldf
 
-## Publish folder
-wwwroot/
-
 # Optional - depends if you commit publish outputs
 # publish/
 
