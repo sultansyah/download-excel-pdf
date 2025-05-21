@@ -1,15 +1,35 @@
-@model dynamic
+@model List<DownloadExcelPDF.Models.Customer>
 
 <html>
 
 <head>
-    <title>@Model.Title</title>
+    <title>Custom PDF</title>
 </head>
 
 <body>
-    <h1>@Model.Title</h1>
-    <p>@Model.Content</p>
-    <p>Generated on: @Model.Date</p>
+    <h1>Data Customer</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Join Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.CustomerID</td>
+                    <td>@c.Name</td>
+                    <td>@c.Email</td>
+                    <td>@c.JoinDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </body>
 
 </html>
