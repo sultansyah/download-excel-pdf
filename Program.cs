@@ -1,9 +1,13 @@
+using DownloadExcelPDF.Data.Interfaces;
+using DownloadExcelPDF.Data.Repositories;
 using Rotativa.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 
 var app = builder.Build();
 
