@@ -1,0 +1,35 @@
+@model List<DownloadExcelPDF.Models.Customer>
+
+<html>
+
+<head>Download Excel PDF</head>
+
+<body>
+    <h2>Customer List</h2>
+    <a href="/File/DownloadPDF" class="btn btn-primary">Download PDF</a>
+    <a href="/File/DownloadExcel" class="btn btn-success">Download Excel</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Join Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr>
+                    <td>@c.CustomerID</td>
+                    <td>@c.Name</td>
+                    <td>@c.Email</td>
+                    <td>@c.JoinDate.ToShortDateString()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+
+</html>
